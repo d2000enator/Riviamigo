@@ -49,7 +49,7 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Personalize your dashboard',
       collapsed: false,
-      items: ['guides/dashboard-customization', 'guides/chart-customization', 'guides/themes'],
+      items: ['guides/r2-companion-preview', 'guides/dashboard-customization', 'guides/chart-customization', 'guides/themes', 'guides/personal-assistant'],
     },
     {
       type: 'category',
@@ -82,6 +82,7 @@ const sidebars: SidebarsConfig = {
         'runbooks/rivian-connection-renewal',
         'runbooks/charge-payload-cleanup',
         'runbooks/r2-ingestion-diagnostics',
+        'runbooks/r2-dashboard-promotion',
       ],
     },
   ],
@@ -97,7 +98,7 @@ const sidebars: SidebarsConfig = {
       type: 'category',
       label: 'Architecture',
       collapsed: false,
-      items: ['architecture/backend-data-flow', 'architecture/unification-baseline', 'architecture/theming', 'architecture/frontend-error-observability', 'frontend/dashboard-architecture', 'frontend/chart-architecture', 'rivian-auth'],
+      items: ['architecture/personal-assistant', 'architecture/backend-data-flow', 'architecture/unification-baseline', 'architecture/theming', 'architecture/frontend-error-observability', 'frontend/dashboard-architecture', 'frontend/chart-architecture', 'rivian-auth'],
     },
     {
       type: 'category',

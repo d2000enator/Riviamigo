@@ -3,8 +3,8 @@
   "assets": [
     {
       "publicPath": "/favicon.svg",
-      "sha256": "ee3bf1fb417a882c6d24fbb2a277d4932c880158adbe1ae8243d8b9683a57dfc",
-      "bytes": 81771,
+      "sha256": "58a0d7a7d12303b73bf69e5fb75abb61c28d0b926125d1a2e96ec8606c8b6171",
+      "bytes": 81754,
       "status": "raster-backed-fallback",
       "selfContained": true,
       "externalReferences": [],
@@ -23,8 +23,8 @@
     },
     {
       "publicPath": "/icon_color_lighter.svg",
-      "sha256": "ee3bf1fb417a882c6d24fbb2a277d4932c880158adbe1ae8243d8b9683a57dfc",
-      "bytes": 81771,
+      "sha256": "58a0d7a7d12303b73bf69e5fb75abb61c28d0b926125d1a2e96ec8606c8b6171",
+      "bytes": 81754,
       "status": "raster-backed-fallback",
       "selfContained": true,
       "externalReferences": [],
@@ -43,8 +43,8 @@
     },
     {
       "publicPath": "/logo_color_lighter.svg",
-      "sha256": "b2cd7f9002ef8b9b2138039a2be1b95874ab36c7ed790ec538066e2d89fcbe4b",
-      "bytes": 90712,
+      "sha256": "cf632db02ce453f2686ac81923f39d32b2329d10ff1515404050db402bf1119c",
+      "bytes": 90695,
       "status": "raster-backed-fallback",
       "selfContained": true,
       "externalReferences": [],
@@ -153,8 +153,8 @@
     },
     {
       "publicPath": "/text_black.svg",
-      "sha256": "3297405741862232a43edc4a8b8e59fb05088cb8e1a3f5c0f7c6be0292d9b840",
-      "bytes": 317932,
+      "sha256": "0ae3cd7009d2a668d75510561c547192f0f774bc0f83ac3dcc6c0afc7e45c526",
+      "bytes": 317901,
       "status": "raster-backed-fallback",
       "selfContained": true,
       "externalReferences": [],
@@ -168,8 +168,8 @@
     },
     {
       "publicPath": "/text_white.svg",
-      "sha256": "f113660df0a02c9a8999b413c1f075944d657685f3ce36e9abaf0c23702a6a00",
-      "bytes": 330426,
+      "sha256": "2550eb9d2d5fe693be6594965a30a5fb0785d6ad80507530f36db30f19cf635c",
+      "bytes": 330402,
       "status": "raster-backed-fallback",
       "selfContained": true,
       "externalReferences": [],

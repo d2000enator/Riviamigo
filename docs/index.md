@@ -49,3 +49,7 @@ Riviamigo's repository documentation is the source of truth for the application,
 - This documentation site renders the complete `docs/` tree for easy navigation and review.
 
 If behavior, structure, operations, or shared visual language changes, update its canonical document in the same pull request or create explicit tracked documentation debt.
+
+## Local personal R2 extension
+
+[Personal assistant](./guides/personal-assistant.md) explains the six features and their demo/live limits. [Architecture and API contracts](./architecture/personal-assistant.md) covers persistence, access and recovery.

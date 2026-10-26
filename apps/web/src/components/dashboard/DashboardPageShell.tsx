@@ -58,6 +58,7 @@ export interface DashboardPageShellProps {
   slug: string;
   dashboardId?: string | undefined;
   title?: string | undefined;
+  presentation?: 'standard' | 'r2';
   isEditMode?: boolean;
   onEditModeChange?: (isEditMode: boolean) => void;
   renderTitleAction?: (state: DashboardPageShellRenderState) => React.ReactNode;
@@ -167,6 +168,7 @@ function DashboardPageShellContent({
   slug,
   dashboardId,
   title,
+  presentation = 'standard',
   isEditMode: controlledEditMode,
   onEditModeChange,
   renderTitleAction,
@@ -348,7 +350,7 @@ function DashboardPageShellContent({
     && Boolean(activeConfig)
     && Boolean(effectiveVehicleId);
 
-  const dateRangeAction = activeConfig?.controls?.dateRange && !currentEditMode ? (
+  const dateRangeAction = (activeConfig?.controls?.dateRange || presentation === 'r2') && !currentEditMode ? (
     <DateRangePicker
       timeframe={timeframe}
       onChange={setTimeframe}
@@ -404,8 +406,9 @@ function DashboardPageShellContent({
   ) : undefined;
 
   return (
-    <AppLayout activeKey={navKey}>
+    <AppLayout activeKey={navKey} presentation={presentation}>
       <PageLayout
+        className={presentation === 'r2' ? 'rm-r2-page' : undefined}
         title={title ?? activeConfig?.name ?? slug}
         titleAction={renderTitleAction?.(shellState) ?? defaultTitleAction}
         actions={pageActions}

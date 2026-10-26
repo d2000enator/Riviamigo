@@ -42,6 +42,7 @@ const authorizationMatrix = new Map([
   ['overview', 'vehicle_read'],
   ['parked_energy', 'vehicle_read'],
   ['places', 'session_vehicle_member'],
+  ['personal_assistant', 'session_vehicle_member_private_records'],
   ['rivian_stewardship', 'session_vehicle_manager'],
   ['schedules', 'session_vehicle_manager'],
   ['settings', 'session_admin'],

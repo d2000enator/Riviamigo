@@ -81,6 +81,7 @@ import {
 } from '@riviamigo/ui/lib/vehicleStatus';
 import { AppLayout } from '../../components/layout/AppLayout';
 import { NoVehicleState } from '../../components/layout/NoVehicleState';
+import { isPersonalR2Model, PersonalR2Artwork } from '../../components/PersonalR2Artwork';
 
 type BadgeVariant = NonNullable<BadgeProps['variant']>;
 type HealthState = { label: string; variant: BadgeVariant };
@@ -163,6 +164,7 @@ export function VehicleHealthContent() {
   );
   const heroImageUrl = resolvedHealthArtwork.light;
   const fallbackHeroImageUrl = resolvedHealthArtwork.fallback;
+  const showPersonalR2Artwork = isPersonalR2Model(activeVehicle?.model ?? data?.vehicle?.model);
   const closureStatusFallback = {
     closure_frunk_closed:
       status?.closure_frunk_closed ?? data?.closures?.closure_frunk_closed ?? null,
@@ -250,9 +252,11 @@ export function VehicleHealthContent() {
                         ) : null}
                       </div>
                     </div>
-                    {heroImageUrl || fallbackHeroImageUrl ? (
+                    {showPersonalR2Artwork || heroImageUrl || fallbackHeroImageUrl ? (
                       <div className="relative aspect-[16/9] w-full min-w-0 max-w-[42rem] justify-self-center overflow-hidden min-[1200px]:aspect-auto min-[1200px]:h-64 min-[1200px]:max-w-none">
-                        <AuthenticatedVehicleArtwork
+                        {showPersonalR2Artwork ? (
+                          <PersonalR2Artwork className="absolute inset-0 h-full w-full object-contain object-center min-[1200px]:object-right-bottom" />
+                        ) : <AuthenticatedVehicleArtwork
                           source={heroImageUrl}
                           fallbackSource={fallbackHeroImageUrl}
                           fallbackProps={{
@@ -261,7 +265,7 @@ export function VehicleHealthContent() {
                           }}
                           alt="Vehicle three-quarter view"
                           className="absolute inset-0 h-full w-full object-contain object-center min-[1200px]:object-right-bottom"
-                        />
+                        />}
                       </div>
                     ) : null}
                   </div>

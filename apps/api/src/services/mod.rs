@@ -23,3 +23,5 @@ pub mod security_audit;
 pub mod trip_enrichment;
 pub mod trip_routes;
 pub mod weather_enrichment;
+
+pub mod personal_assistant;

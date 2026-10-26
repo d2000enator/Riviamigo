@@ -1,0 +1,292 @@
+/* The assistant inherits the existing R2 palette and shared input/button tokens. */
+.rm-assistant-page {
+  min-width: 0;
+  display: grid;
+  gap: 18px;
+  font-size: 14px;
+}
+.rm-assistant-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(180px, 0.7fr);
+  gap: 20px;
+  align-items: center;
+  border: 1px solid var(--rm-border-default);
+  border-radius: 16px;
+  padding: 26px;
+  background: var(--rm-bg-surface);
+}
+.rm-assistant-eyebrow {
+  font-size: 10px;
+  font-weight: 650;
+  letter-spacing: 0.1em;
+  color: var(--rm-text-secondary);
+}
+.rm-assistant-hero h2 {
+  font-size: clamp(25px, 3vw, 36px);
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+  margin: 12px 0;
+}
+.rm-assistant-page p {
+  color: var(--rm-text-secondary);
+  line-height: 1.6;
+  margin: 8px 0;
+  overflow-wrap: anywhere;
+}
+.rm-assistant-car {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+}
+.rm-assistant-badges,
+.rm-assistant-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 14px;
+}
+.rm-assistant-toolbar,
+.rm-assistant-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.rm-assistant-toolbar > div {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.rm-assistant-page button {
+  min-height: 44px;
+  height: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.rm-assistant-page input:not([type='checkbox']) {
+  min-height: 44px;
+}
+.rm-assistant-tabs {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 8px;
+}
+.rm-assistant-tabs button {
+  min-width: 0;
+  white-space: nowrap;
+}
+.rm-assistant-count {
+  font-size: 10px;
+  padding: 2px 6px;
+  border: 1px solid currentColor;
+  border-radius: 16px;
+}
+.rm-assistant-fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+.rm-assistant-fieldset > [role='tabpanel'] {
+  display: grid;
+  gap: 18px;
+  min-width: 0;
+}
+.rm-assistant-section-heading h3 {
+  font-size: 19px;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  margin: 0;
+}
+.rm-assistant-panel {
+  min-width: 0;
+  border: 1px solid var(--rm-border-default);
+  border-radius: 13px;
+  background: var(--rm-bg-surface);
+  padding: 20px;
+}
+.rm-assistant-panel h4 {
+  font-weight: 600;
+  font-size: 16px;
+  margin: 0 0 6px;
+}
+.rm-assistant-panel small,
+.rm-assistant-footer {
+  color: var(--rm-text-secondary);
+  font-size: 11px;
+  line-height: 1.6;
+}
+.rm-assistant-panel > button {
+  margin-top: 12px;
+}
+.rm-assistant-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.rm-assistant-stack {
+  display: grid;
+  gap: 12px;
+}
+.rm-assistant-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin: 20px 0;
+}
+.rm-assistant-metrics small {
+  display: block;
+  margin-bottom: 5px;
+}
+.rm-assistant-metrics strong {
+  display: block;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  overflow-wrap: anywhere;
+}
+.rm-assistant-form {
+  display: grid;
+  gap: 14px;
+}
+.rm-assistant-check {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  min-height: 44px;
+  line-height: 1.5;
+}
+.rm-assistant-check input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--rm-accent);
+  flex-shrink: 0;
+}
+.rm-assistant-empty {
+  padding: 30px;
+  border: 1px dashed var(--rm-border-default);
+  border-radius: 12px;
+  color: var(--rm-text-secondary);
+  line-height: 1.6;
+}
+.rm-assistant-notice,
+.rm-assistant-preview-note {
+  border-left: 3px solid var(--rm-accent);
+  padding: 10px 14px;
+  background: var(--rm-bg-surface);
+}
+.rm-assistant-demo {
+  padding: 18px;
+  border: 1px solid var(--rm-border-default);
+  border-radius: 12px;
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  flex-wrap: wrap;
+  background: var(--rm-bg-surface);
+}
+.rm-assistant-demo > div:first-child {
+  flex: 1 1 220px;
+}
+.rm-assistant-panel summary {
+  cursor: pointer;
+  min-height: 44px;
+  font-weight: 600;
+}
+.rm-assistant-file-label {
+  display: grid;
+  gap: 8px;
+  font-size: 13px;
+  margin: 18px 0;
+  overflow-wrap: anywhere;
+}
+.rm-assistant-file-label input {
+  max-width: 100%;
+  font-size: 12px;
+}
+.rm-assistant-receipts {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.rm-assistant-receipts button {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+.rm-assistant-overview {
+  border: 1px solid var(--rm-border-default);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 16px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: center;
+  background: var(--rm-bg-surface);
+}
+.rm-assistant-overview h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 6px 0;
+}
+.rm-assistant-overview p {
+  font-size: 12px;
+  color: var(--rm-text-secondary);
+}
+.rm-assistant-overview button {
+  min-height: 44px;
+  flex-shrink: 0;
+}
+@media (max-width: 1100px) {
+  .rm-assistant-tabs {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (max-width: 640px) {
+  .rm-assistant-hero {
+    grid-template-columns: 1fr;
+    padding: 20px;
+    gap: 4px;
+  }
+  .rm-assistant-car {
+    height: 170px;
+    order: -1;
+  }
+  .rm-assistant-grid {
+    grid-template-columns: 1fr;
+  }
+  .rm-assistant-panel {
+    padding: 16px;
+  }
+  .rm-assistant-tabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .rm-assistant-toolbar > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+  }
+  .rm-assistant-demo {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .rm-assistant-overview {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .rm-assistant-overview button {
+    width: 100%;
+  }
+  .rm-assistant-metrics strong {
+    font-size: 21px;
+  }
+}
+
+.rm-assistant-page li {
+  color: var(--rm-text-secondary);
+  line-height: 1.6;
+  margin: 8px 0;
+  overflow-wrap: anywhere;
+}

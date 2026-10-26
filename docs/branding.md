@@ -277,3 +277,28 @@ in the expanded, collapsed, and mobile sidebar while preserving a healthy green
 the estimated date and recommendation beside the existing login-repair action.
 Copy must say **estimated**, **renewal**, or **recommended** rather than claiming
 that Rivian guarantees an expiration date.
+
+## Personal R2 composition — local v0.2.0
+
+The approved graphite/sage/amber Overview presentation defines its palette only
+in packages/ui/src/tokens/globals.css under [data-r2-presentation='true'].
+Component CSS consumes semantic tokens. AppLayout keeps its sidebar, account
+controller, status/WebSocket behavior and mobile navigation. The scoped view
+does not write account theme preferences; Classic preserves the existing theme.
+
+The composition adds a Launch Green illustration, latest snapshot, scenic
+greeting, four period summaries, RichTimeSeriesChart instances, compact trip
+links and the last charge. Demo classification comes from the selected vehicle.
+No fictional readings are bundled as fallback values. Missing readings are
+unavailable and the layout remains responsive.
+
+### Personal R2 artwork (local v0.2.3)
+
+Overview and Vehicle Health use the shared `PersonalR2Artwork` component for R2
+and legacy R2S selections. Its Launch Green illustration is a presentation choice,
+not reported paint or configuration. Keep the existing responsive contain fit;
+other models retain the authenticated artwork resolver and packaged fallback.
+
+## Personal assistant v0.3.0
+
+The R2 Assistant shares the Overview graphite/sage tokens and Launch Green illustration. Six labeled touch tabs collapse from six to three to two columns. Inputs/buttons retain44px touch targets; cards collapse to one column. Saved status, unsaved preview, demo data and disabled vehicle controls remain explicit. Use shared Input/Button/Badge/SelectPicker and inline confirmation for record removal. Dashboard-only alerts retain accessible severity/status text; never rely on color alone.

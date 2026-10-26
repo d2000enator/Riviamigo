@@ -64,3 +64,4 @@ export { useDocumentTheme } from './useDocumentTheme';
 export { AuthenticatedVehicleArtwork, useVehicleArtwork } from './useVehicleArtwork';
 export { getVehicleArtworkFallback, normalizeVehicleArtworkModel, resolveVehicleArtwork } from './vehicleArtworkFallback';
 export type { ResolvedVehicleArtwork, VehicleArtworkFallbackModel, VehicleArtworkUsage } from './vehicleArtworkFallback';
+export { personalAssistantKey, usePersonalAssistant, usePersonalAssistantWeekly, useSavePersonalAssistant, usePreviewPersonalAssistant, useAcknowledgeAssistantAlert, useUploadAssistantReceipt, getAssistantReceipt } from './usePersonalAssistant';

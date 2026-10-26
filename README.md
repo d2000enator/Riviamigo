@@ -1,3 +1,5 @@
+> **Unofficial R2 Companion v0.3.2 preview.** This fork adds an optional Launch Green R2 dashboard and a private personal assistant to upstream Riviamigo 2026.10.1. See the [preview guide](docs/guides/r2-companion-preview.md) for features, validation limits and safe evaluation. Live R2 compatibility is not yet confirmed by this contributor. No stable installer or automatic production upgrade is provided.
+
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./docs/assets/readme/logo-lockup-dark.png" />
@@ -114,3 +116,7 @@ Riviamigo is licensed under [GPL-3.0-only](./LICENSE). You can use, modify, and 
 ## Developing Riviamigo
 
 If you want to contribute or run the developer stack, [`CLAUDE.md`](./CLAUDE.md) is the concise developer setup and command guide. The [repository docs hub](./docs/index.md) routes you to the architecture, dashboard, API, security, and contributor references.
+
+## Local personal R2 extension
+
+This checkout includes the private Assistant v0.3.1: manual trip/departure planning, saved dashboard alerts, vacation watch, weekly history, and service records with receipts. [Usage and limitations](docs/guides/personal-assistant.md) and [API/storage/recovery contracts](docs/architecture/personal-assistant.md) describe the implementation. Real vehicle fields require post-delivery verification; no vehicle commands or external alerts are enabled by this extension.

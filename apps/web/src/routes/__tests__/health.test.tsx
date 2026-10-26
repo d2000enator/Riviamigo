@@ -463,6 +463,8 @@ const HealthContent = healthRoute.options.component as React.ComponentType;
 
 describe('/vehicle-health page cleanup', () => {
   beforeEach(() => {
+    healthPageMocks.vehicles[0]!.model = 'R1T';
+    healthPageMocks.vehicles[1]!.model = 'R1T';
     healthPageMocks.auth.defaultVehicleId = 'veh-1';
     healthPageMocks.auth.activeVehicleId = null;
     healthPageMocks.auth.setActiveVehicleId.mockReset();
@@ -565,6 +567,25 @@ describe('/vehicle-health page cleanup', () => {
       'src',
       '/vehicle-images/fallbacks/r1t/health.webp'
     );
+  });
+
+  it.each(['R2', 'R2S'])('uses the shared Launch Green art for %s, even with existing provider art', (model) => {
+    healthPageMocks.vehicles[0]!.model = model;
+    render(<HealthContent />);
+    expect(screen.getByAltText('R2 illustration in Launch Green')).toHaveAttribute(
+      'src', '/r2-dashboard/r2-launch-green-v0.1.0.png'
+    );
+    expect(screen.queryByAltText('Vehicle three-quarter view')).not.toBeInTheDocument();
+  });
+
+  it('returns to existing vehicle artwork when switching from R2 to R1T', () => {
+    healthPageMocks.vehicles[0]!.model = 'R2';
+    const { rerender } = render(<HealthContent />);
+    expect(screen.getByAltText('R2 illustration in Launch Green')).toBeInTheDocument();
+    healthPageMocks.vehicles[0]!.model = 'R1T';
+    rerender(<HealthContent />);
+    expect(screen.queryByAltText('R2 illustration in Launch Green')).not.toBeInTheDocument();
+    expect(screen.getByAltText('Vehicle three-quarter view')).toBeInTheDocument();
   });
 
   it('shows update banner when a real update version exists', () => {

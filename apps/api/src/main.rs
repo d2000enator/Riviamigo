@@ -131,6 +131,8 @@ async fn main() -> anyhow::Result<()> {
         charge_identity_backfill_config,
     );
 
+    let _personal_assistant_monitor = services::personal_assistant::start_worker(pool.clone());
+
     let app = routes::build_router(state);
 
     let addr: SocketAddr = format!(

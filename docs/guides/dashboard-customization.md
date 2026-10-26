@@ -64,3 +64,23 @@ Changing the preview does not change vehicle data and is not itself saved. Widge
 # Chart manager
 
 Chart definitions now have their own lifecycle in **Settings > Charts**. See [Chart customization](./chart-customization.md) for assignments, personal overrides, import/export, and the full-window editor.
+
+## Personal R2 overview (local build v0.2.3)
+
+This local build opens the personal R2 composition on Overview when an R2 is
+selected. It uses existing selected-vehicle authentication, date range, units,
+history and detail pages. Demo vehicles are visibly marked as sample data; a
+real vehicle never falls back to fictional values. The Launch Green picture is
+a personal illustration, not a live paint/configuration reading. Overview and
+Vehicle Health share this artwork for R2 and legacy R2S models; other vehicle
+models retain their existing authenticated artwork and fallbacks.
+
+Use **Classic overview** for the saved dashboard and editor; **Use R2 dashboard**
+returns to this composition. The choice is saved in this browser for the signed-in
+account. System/personal widget layouts and account theme preferences are preserved.
+The R2 view has scoped dark styling; Classic retains full account theme behavior.
+
+The date picker applies to history and cards; the hero shows the latest snapshot
+with its timestamp and stale/demo state. Missing history and failed requests stay
+explicit. Select a trip, charge, chart interval or metric card to open its existing
+screen. Real R2 telemetry still needs delivery-time testing. No commands are added.

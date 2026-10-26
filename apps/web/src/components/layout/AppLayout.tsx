@@ -32,15 +32,11 @@ import {
 import { FaTruckPickup } from 'react-icons/fa6';
 import { emitToast } from '../feedback/toast';
 import { useThemePreferenceController } from '../../hooks/useThemePreferenceController';
+import { collapsedFooterRow, collapsedFooterCell, layoutPresentation, type AppLayoutProps } from './appPresentation';
 import {
   getRivianCredentialRenewalNotice,
   type RivianCredentialRenewalNotice,
 } from '../../lib/rivianCredentialRenewal';
-
-interface AppLayoutProps {
-  children: React.ReactNode;
-  activeKey: string;
-}
 
 interface FeedHealthStatus {
   auth_state?: string | null;
@@ -144,7 +140,7 @@ function getCompactBatteryIcon(socPercent: number) {
   return { Component: TbBatteryOff, variant: 'off' };
 }
 
-export function AppLayout({ children, activeKey }: AppLayoutProps) {
+export function AppLayout({ children, activeKey, presentation = 'standard' }: AppLayoutProps) {
   const navigate = useNavigate();
   const accessToken = useAuth((s) => s.accessToken);
   const logout = useAuth((s) => s.logout);
@@ -229,12 +225,9 @@ export function AppLayout({ children, activeKey }: AppLayoutProps) {
       ? { Component: TbBatteryCharging, variant: 'charging' }
       : getCompactBatteryIcon(compactBatteryLevel)
     : undefined;
-  const collapsedFooterRow =
-    '-mx-1 grid w-[calc(100%+0.5rem)] grid-cols-[24px_24px] items-center justify-between';
   const collapsedStatusRow = compactBatteryIcon
     ? collapsedFooterRow
     : 'flex w-full items-center justify-center';
-  const collapsedFooterCell = 'flex h-8 w-6 items-center justify-center';
   const sidebarItems = React.useMemo<NavItem[]>(() => {
     const firstVehicleModel = vehicles[0]?.model?.toUpperCase() ?? '';
     const overviewIcon = firstVehicleModel.includes('R1T') ? (
@@ -283,8 +276,8 @@ export function AppLayout({ children, activeKey }: AppLayoutProps) {
   }
 
   return (
-    <div className="min-h-screen bg-bg-page text-fg" data-unit-system={unitSystem}>
-      <AmbientOrbs />
+    <div {...layoutPresentation(presentation, unitSystem, sidebarCollapsed)}>
+      {presentation === 'standard' ? <AmbientOrbs /> : null}
 
       <Sidebar
         activeKey={activeKey}

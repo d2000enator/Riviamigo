@@ -469,3 +469,32 @@ textarea:-webkit-autofill:focus {
   background: var(--rm-bg-surface);
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.18);
 }
+
+/* R2 personal overview v0.2.0: scoped presentation, not an account-theme write. */
+[data-r2-presentation='true'] {
+  --rm-bg-page: #202626;
+  --rm-bg-surface: #1b2223;
+  --rm-bg-elevated: #29352e;
+  --rm-bg-glass: rgba(32, 40, 41, .85);
+  --rm-text-primary: #f4f3ef;
+  --rm-text-secondary: #b3bbb8;
+  --rm-text-tertiary: #939e95;
+  --rm-text-on-accent: #18231b;
+  --rm-border-default: #35403e;
+  --rm-border-strong: #4c5a4e;
+  --rm-border-accent: #789278;
+  --rm-accent: #b6d394;
+  --rm-accent-hover: #c6dfaa;
+  --rm-accent-muted: rgba(148, 214, 142, .11);
+  --rm-status-positive: #94d68e;
+  --rm-status-warning: #edca79;
+  --rm-chart-success: #94d68e;
+  --rm-chart-accent: #94d68e;
+  --rm-chart-grid: #404c47;
+  --rm-chart-muted: #a6b6a4;
+  --rm-r2-gold: #edca79;
+  --rm-r2-panel: #202829;
+  --rm-r2-bar: #4b725c;
+  --rm-r2-chart-band: #3f5e50;
+  --rm-r2-art-shadow: rgba(0, 0, 0, .25);
+}

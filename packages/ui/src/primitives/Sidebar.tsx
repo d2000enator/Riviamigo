@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {
   BatteryFull, TrendingUp,
-  Heart, Menu, X, MoreVertical,
+  Heart, Menu, X, MoreVertical, CalendarCheck2,
 } from 'lucide-react';
 import { TbCarSuv } from 'react-icons/tb';
 import { FaChargingStation } from 'react-icons/fa6';
@@ -22,6 +22,7 @@ const NAV_ICON_CLASS = 'h-[1.125rem] w-[1.125rem]';
 
 const DEFAULT_NAV_ITEMS: NavItem[] = [
   { key: 'dashboard',  label: 'Overview',   href: '/',          icon: <TbCarSuv className={NAV_ICON_CLASS} /> },
+  { key: 'assistant', label: 'Assistant', href: '/assistant', icon: <CalendarCheck2 className={NAV_ICON_CLASS} /> },
   { key: 'battery',    label: 'Battery',    href: '/battery',   icon: <BatteryFull className={NAV_ICON_CLASS} data-nav-icon="battery-full" /> },
   { key: 'charging',   label: 'Charging',   href: '/charging',  icon: <FaChargingStation className={NAV_ICON_CLASS} /> },
   { key: 'trips',      label: 'Trips',      href: '/trips',     icon: <BiTrip className={NAV_ICON_CLASS} /> },

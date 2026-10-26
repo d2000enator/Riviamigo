@@ -27,3 +27,7 @@ Use this section after the installation is healthy and receiving vehicle data. I
 - Installation, remote access, updates, backups, and troubleshooting belong in [Operations](./operations.md).
 - API keys, metrics, and dashboard data contracts belong in [Reference](./reference.md).
 - Widget implementation and shared dashboard architecture belong in [Development](./development.md).
+
+## Local personal assistant
+
+The private R2 extension adds [trip readiness, dashboard alerts, vacation watch, weekly summaries, service records and departure reminders](./guides/personal-assistant.md). Demo scenarios can be explored before delivery; actual vehicle commands remain off.

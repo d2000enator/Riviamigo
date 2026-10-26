@@ -304,3 +304,22 @@ packages/ui/src/
 ## Next Structural Step
 
 The current shell is the first stabilization step. If the number of built-in dashboards keeps growing, the next evolution should be a lightweight page-definition layer so routes declare metadata instead of assembling custom wrapper logic repeatedly.
+
+## Personal R2 overview composition (local v0.2.0)
+
+OverviewDashboardPage selects R2 presentation for an R2/R2S and offers an
+account-keyed browser-local Classic escape. DashboardPageShell still owns
+auth/vehicle readiness, selection, date range, units and rendering guards. Its
+optional presentation prop reaches AppLayout/PageLayout without changing
+standard routes or the legacy DashboardRenderer.
+
+R2OverviewContent uses renderBeforeDashboard, suppressing the registered grid
+only in this presentation. Saved system/personal widgets remain unchanged and
+editable in Classic. Existing bundled renderers are not migrated; the two new
+RichTimeSeriesChart instances have distinct identities.
+
+Key the child by vehicle to discard previous query observers. Hide placeholder
+results on period changes and check returned trip/session vehicle IDs. Requests
+use existing typed authenticated hooks. Full-period summary endpoints supply
+aggregates; three recent rows do not determine the totals. Detail links reuse
+normal routes. No endpoint, migration, command or account-connect path is added.

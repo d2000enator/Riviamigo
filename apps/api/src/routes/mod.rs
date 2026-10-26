@@ -45,6 +45,7 @@ pub mod locations;
 pub mod metrics;
 pub mod overview;
 pub mod parked_energy;
+pub mod personal_assistant;
 pub mod places;
 pub mod range_normalization;
 pub mod rivian_stewardship;
@@ -294,7 +295,34 @@ pub fn build_router(state: AppState) -> Router {
         .layer(GovernorLayer::new(auth_read_identity_config.clone()))
         .layer(GovernorLayer::new(auth_write_identity_config.clone()));
 
+    let assistant_routes = Router::new()
+        .merge(personal_assistant::router())
+        .layer(RequestBodyLimitLayer::new(256 * 1024))
+        .layer(GovernorLayer::new(auth_read_identity_config.clone()))
+        .layer(GovernorLayer::new(auth_write_identity_config.clone()));
+    let assistant_upload = personal_assistant::upload_router()
+        .layer(axum::extract::DefaultBodyLimit::max(7 * 1024 * 1024))
+        .layer(RequestBodyLimitLayer::new(7 * 1024 * 1024))
+        .layer(GovernorLayer::new(auth_read_identity_config.clone()))
+        .layer(GovernorLayer::new(auth_write_identity_config.clone()));
+
+    // Both assistant surfaces contain user-private records. Keep this outside
+    // their body/rate limits so rejected uploads and normal replies share the
+    // same cache policy. The existing v2 policy does not cover v1 routes.
+    let assistant_private = Router::new()
+        .merge(assistant_routes)
+        .merge(assistant_upload)
+        .layer(SetResponseHeaderLayer::overriding(
+            CACHE_CONTROL,
+            HeaderValue::from_static("private, no-store"),
+        ))
+        .layer(SetResponseHeaderLayer::overriding(
+            VARY,
+            HeaderValue::from_static("Authorization, Cookie"),
+        ));
+
     let protected = Router::new()
+        .merge(assistant_private)
         .merge(protected_metadata)
         .merge(
             protected_common
